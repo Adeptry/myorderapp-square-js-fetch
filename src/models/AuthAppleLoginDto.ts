@@ -16,69 +16,56 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface UserPatchBody
+ * @interface AuthAppleLoginDto
  */
-export interface UserPatchBody {
+export interface AuthAppleLoginDto {
     /**
      * 
      * @type {string}
-     * @memberof UserPatchBody
-     */
-    email?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserPatchBody
+     * @memberof AuthAppleLoginDto
      */
     firstName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserPatchBody
+     * @memberof AuthAppleLoginDto
      */
-    language?: string | null;
+    idToken: string;
     /**
      * 
      * @type {string}
-     * @memberof UserPatchBody
+     * @memberof AuthAppleLoginDto
      */
     lastName?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserPatchBody
-     */
-    phoneNumber?: string | null;
 }
 
 /**
- * Check if a given object implements the UserPatchBody interface.
+ * Check if a given object implements the AuthAppleLoginDto interface.
  */
-export function instanceOfUserPatchBody(value: object): boolean {
+export function instanceOfAuthAppleLoginDto(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "idToken" in value;
 
     return isInstance;
 }
 
-export function UserPatchBodyFromJSON(json: any): UserPatchBody {
-    return UserPatchBodyFromJSONTyped(json, false);
+export function AuthAppleLoginDtoFromJSON(json: any): AuthAppleLoginDto {
+    return AuthAppleLoginDtoFromJSONTyped(json, false);
 }
 
-export function UserPatchBodyFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserPatchBody {
+export function AuthAppleLoginDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthAppleLoginDto {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
-        'email': !exists(json, 'email') ? undefined : json['email'],
         'firstName': !exists(json, 'firstName') ? undefined : json['firstName'],
-        'language': !exists(json, 'language') ? undefined : json['language'],
+        'idToken': json['idToken'],
         'lastName': !exists(json, 'lastName') ? undefined : json['lastName'],
-        'phoneNumber': !exists(json, 'phoneNumber') ? undefined : json['phoneNumber'],
     };
 }
 
-export function UserPatchBodyToJSON(value?: UserPatchBody | null): any {
+export function AuthAppleLoginDtoToJSON(value?: AuthAppleLoginDto | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -87,11 +74,9 @@ export function UserPatchBodyToJSON(value?: UserPatchBody | null): any {
     }
     return {
         
-        'email': value.email,
         'firstName': value.firstName,
-        'language': value.language,
+        'idToken': value.idToken,
         'lastName': value.lastName,
-        'phoneNumber': value.phoneNumber,
     };
 }
 

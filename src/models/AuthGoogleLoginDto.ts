@@ -16,42 +16,42 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface VariationPatchBody
+ * @interface AuthGoogleLoginDto
  */
-export interface VariationPatchBody {
+export interface AuthGoogleLoginDto {
     /**
      * 
-     * @type {boolean}
-     * @memberof VariationPatchBody
+     * @type {string}
+     * @memberof AuthGoogleLoginDto
      */
-    moaEnabled: boolean;
+    idToken: string;
 }
 
 /**
- * Check if a given object implements the VariationPatchBody interface.
+ * Check if a given object implements the AuthGoogleLoginDto interface.
  */
-export function instanceOfVariationPatchBody(value: object): boolean {
+export function instanceOfAuthGoogleLoginDto(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "moaEnabled" in value;
+    isInstance = isInstance && "idToken" in value;
 
     return isInstance;
 }
 
-export function VariationPatchBodyFromJSON(json: any): VariationPatchBody {
-    return VariationPatchBodyFromJSONTyped(json, false);
+export function AuthGoogleLoginDtoFromJSON(json: any): AuthGoogleLoginDto {
+    return AuthGoogleLoginDtoFromJSONTyped(json, false);
 }
 
-export function VariationPatchBodyFromJSONTyped(json: any, ignoreDiscriminator: boolean): VariationPatchBody {
+export function AuthGoogleLoginDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthGoogleLoginDto {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
-        'moaEnabled': json['moaEnabled'],
+        'idToken': json['idToken'],
     };
 }
 
-export function VariationPatchBodyToJSON(value?: VariationPatchBody | null): any {
+export function AuthGoogleLoginDtoToJSON(value?: AuthGoogleLoginDto | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -60,7 +60,7 @@ export function VariationPatchBodyToJSON(value?: VariationPatchBody | null): any
     }
     return {
         
-        'moaEnabled': value.moaEnabled,
+        'idToken': value.idToken,
     };
 }
 

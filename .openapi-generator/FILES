@@ -18,6 +18,8 @@ src/models/AddressEntity.ts
 src/models/AppConfigEntity.ts
 src/models/AppConfigUpdateBody.ts
 src/models/AppInstallPostBody.ts
+src/models/AuthAppleLoginDto.ts
+src/models/AuthGoogleLoginDto.ts
 src/models/AuthenticationEmailConfirmRequestBody.ts
 src/models/AuthenticationEmailLoginRequestBody.ts
 src/models/AuthenticationEmailRegisterRequestBody.ts

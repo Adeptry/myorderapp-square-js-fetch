@@ -4,6 +4,8 @@ export * from './AddressEntity';
 export * from './AppConfigEntity';
 export * from './AppConfigUpdateBody';
 export * from './AppInstallPostBody';
+export * from './AuthAppleLoginDto';
+export * from './AuthGoogleLoginDto';
 export * from './AuthenticationEmailConfirmRequestBody';
 export * from './AuthenticationEmailLoginRequestBody';
 export * from './AuthenticationEmailRegisterRequestBody';
